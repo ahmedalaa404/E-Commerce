@@ -2,7 +2,7 @@
 
 <div class="w-8/12 mx-auto shadow p-5 bg-gray-300 mt-5 rounded">
 
-    <form [formGroup]="RegisterForm" (ngSubmit)="showdata(RegisterForm)">
+    <form [formGroup]="RegisterForm" (ngSubmit)="showData(RegisterForm)">
         <div>
             <label for="" class="mt-5">Name:</label>
             <input type="text" class="form-control" formControlName="name">
@@ -22,6 +22,11 @@
         <div>
             <label for="" class="mt-5">passsword:</label>
             <input type="password" class="form-control"formControlName="password">
+            <!-- @if(RegisterForm.get('password')?.touched&&RegisterForm.get('password')?.errors('required')) -->
+        
+        
+        
+        
         </div>
     
     
@@ -35,13 +40,22 @@
     
         <div>
             <label for="" class="mt-5">phone:</label>
-            <input type="number" class="form-control"formControlName="phone">
+            <input type="text" class="form-control"formControlName="phone">
         </div>
     
     
     
         <div>
-            <button class="rounded-xl px-3 py-2 bg-main">Register</button>
+            @if(RegisterForm.invalid)
+            {
+
+                <button class="bg-red-700 rounded-xl px-3 py-2 text-white" [disabled]="RegisterForm.invalid">Register</button>
+            }
+            @else
+            {
+                <button class="rounded-xl px-3 py-2 bg-main text-white" > Register </button>
+
+            }
         </div>
     
     
