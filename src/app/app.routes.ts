@@ -10,12 +10,12 @@ import { NotfoundComponent } from './Component/notfound/notfound.component';
 
 export const routes: Routes = [
 
-    {path:" ",redirectTo:"/home",pathMatch:"full"},
+    {path:" ",redirectTo:"/register",pathMatch:"full"},
     {path:"home",component:HomeComponent},
     {path:"cart",component:CartComponent},
     {path:"login",component:LoginComponent},
     {path:"register",component:RegisterComponent},
-    {path:"Brands",component:BrandsComponent},
+    {path:"brands",component:BrandsComponent},
     {path:"Product",component:ProductsComponent },
     {path:"categories",component:CategoriesComponent},
     {path:"**",component:NotfoundComponent},
