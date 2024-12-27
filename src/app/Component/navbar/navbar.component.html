@@ -1,0 +1,54 @@
+<nav class="bg-zinc-200 shadow-lg">
+  <div class="container mx-auto flex flex-wrap items-center justify-between p-4">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img src="assets/images/freshcart-logo.svg" alt="Logo" class="h-8">
+    </div>
+
+    <!-- Hamburger Icon for Mobile -->
+    <button 
+      
+      class="md:hidden p-2 text-gray-700 hover:text-gray-900" 
+      aria-label="Toggle navigation">
+      <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18m-9 6h9" />
+      </svg>
+    </button>
+
+    <!-- Navigation Links -->
+    <ul class="hidden md:flex flex-col md:flex-row space-x-3 md:space-x-5 mt-3 md:mt-0">
+      <li><a routerLink="home" routerLinkActive="bg-main">Home</a></li>
+      <li><a routerLink="cart" routerLinkActive="bg-main">Cart</a></li>
+      <li><a routerLink="products" routerLinkActive="bg-main">Products</a></li>
+      <li><a routerLink="brands" routerLinkActive="bg-main">Brand</a></li>
+      <li><a routerLink="categories" routerLinkActive="bg-main">Categories</a></li>
+    </ul>
+
+    <!-- Social Media Lins -->
+    <ul class="hidden md:lex space-x-3 items-center">
+      <!-- <li><i class="ab fa-facebook text-xl text-blue-500"></i></li>
+      <li><i class="fab f-twitter text-xl text-blue-400"></i></li>
+      <li><i class="fab f-instagram text-xl text-pink-500"></i></li> -->
+      <li><a routerLink="logout" routerLinkActive="bg-main">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden fex flex-col space-y-3 p-4">
+    <ul>
+      <li><a routerLink="ome" routerLinkActive="bg-main">Home</a></li>
+      <li><a routerLink="art" routerLinkActive="bg-main">Cart</a></li>
+      <li><a routerLink="roducts" routerLinkActive="bg-main">Products</a></li>
+      <li><a routerLink="rands" routerLinkActive="bg-main">Brand</a></li>
+      <li><a routerLink="ategories" routerLinkActive="bg-main">Categories</a></li>
+    </ul>
+    <ul class="flex space-x-3 mt-3">
+      <!-- <li><i class="fab fa-facebook text-xl text-blue-500"></i></li>
+      <li><i class="fab fa-twitter text-xl text-blue-400"></i></li>
+      <li><i class="fab fa-instagram text-xl text-pink-500"></i></li> -->
+      <li><a routerLink="logout" routerLinkActive="bg-main">Logout</a></li>
+      <li><a routerLink="register" routerLinkActive="bg-main">Register</a></li>
+      <li><a routerLink="login" routerLinkActive="bg-main">Login</a></li>
+    </ul>
+  </div>
+</nav>

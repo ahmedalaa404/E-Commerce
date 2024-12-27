@@ -1,18 +1,35 @@
 import { Component } from '@angular/core';
 
 import {FormControl, ReactiveFormsModule,FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms'
+import {AuthenticationService} from '../../Services/authentication.service'
+import { Router } from '@angular/router';
+
+
+
+
+
+
+
+
+
 @Component({
   selector: 'app-register',
   imports: [ReactiveFormsModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
+
 })
 export class RegisterComponent {
 
-// form Group = ===  > form 
+  
+  BackendMessage:string="";
 
 
+  // form Group = ===  > form 
 // form Control== Input
+
+loading=false;
+
 RegisterForm = new FormGroup(
   {
     name: new FormControl(null, [
@@ -49,9 +66,48 @@ ConfirmationPassword(group: AbstractControl): ValidationErrors | null {
 }
 
 
-showData(event:any)
+
+
+
+
+constructor(public _authentication:AuthenticationService, private _Router:Router) {
+
+  
+}
+
+
+
+Register(event:FormGroup)
 {
+  this.loading=true;
+  if(event.valid)
+  {
+    this._authentication.SignUp(event.value).subscribe({
+      next:(suceess)=>{
+        this.BackendMessage=suceess.message;
+        this._Router.navigate(["/login"]);
+      },
+      error:(error)=>{
+        console.error(error);
+        this.BackendMessage=error.error.message ;
+      },
+      complete:()=>{  
+        console.log(event.value);
+        this.loading=false;
+      }
+
+
+    })
+  }
   console.log(event)
 }
+
+
+
+
+
+
+
+
 
 }
