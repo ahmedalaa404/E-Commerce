@@ -41,8 +41,10 @@ SignIn(UserLoign: UserLoign):Observable<any>
 
 // SignOut():Observable<any>
 // {
+//     localStorage.removeItem("token");
+//     this.IsLogin.next(false);
 
-//   return this._httpClient.post("https://ecommerce.routemisr.com/api/v1/auth/signin",UserLoign)
+
 // }
 
 
