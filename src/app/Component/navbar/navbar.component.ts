@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component ,OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthenticationService } from '../../Services/authentication.service';
+
 
 
 @Component({
@@ -9,9 +11,22 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
   imports:[CommonModule,RouterLink,RouterLinkActive ]
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+
+ShowLinks:Boolean=false;
+constructor(private _authService:AuthenticationService) {
+  
+}
+
+
+  ngOnInit():void{  
+  console.log("navbar");
+this._authService.IsLogin.subscribe((data)=>{
+this.ShowLinks=data;  
+  console.log(data);
+})
+}
 
 
 
-  IsLogin:boolean=false;
 }

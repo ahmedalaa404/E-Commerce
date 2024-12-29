@@ -21,7 +21,7 @@
 
     <ul class="hidden md:flex flex-col md:flex-row space-x-3 md:space-x-5 mt-3 md:mt-0">
 
-@if(IsLogin)
+@if(ShowLinks)
 {
   <li><a routerLink="home" routerLinkActive="bg-main">Home</a></li>
   <li><a routerLink="cart" routerLinkActive="bg-main">Cart</a></li>
@@ -47,7 +47,7 @@
   <div class="md:hidden fex flex-col space-y-3 p-4">
 
     <ul>
-      @if(IsLogin)
+      @if(ShowLinks)
       {
       <li><a routerLink="ome" routerLinkActive="bg-main">Home</a></li>
       <li><a routerLink="art" routerLinkActive="bg-main">Cart</a></li>
@@ -59,7 +59,7 @@
     
       <ul class="flex space-x-3 mt-3">
 
-        @if(IsLogin)
+        @if(ShowLinks)
         {
         <li><a routerLink="logout" routerLinkActive="bg-main">Logout</a></li>}
 

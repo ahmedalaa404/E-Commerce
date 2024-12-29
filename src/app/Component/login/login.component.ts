@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
         console.log(DecodeToken);
         // because now have event in this Method soo use 
         // to save the token in local storage not use afterrendernext  or afterrender pr if typeof localstorage !== undefined 
-
+        this._AuthenticationService.IsLogin.next(true);
         this._Router.navigate(['/home']);
       },
       error: (responceError) => {

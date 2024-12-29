@@ -2,12 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RegisterData } from '../interfaces/register-data';
 import { UserLoign } from '../interfaces/user-loign';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
+
+
+  IsLogin:BehaviorSubject<boolean>=new BehaviorSubject<boolean>(false);
+
+
 
   constructor(private _httpClient:HttpClient) { }
 
@@ -31,5 +36,19 @@ SignIn(UserLoign: UserLoign):Observable<any>
 
   return this._httpClient.post("https://ecommerce.routemisr.com/api/v1/auth/signin",UserLoign)
 }
+
+
+
+// SignOut():Observable<any>
+// {
+
+//   return this._httpClient.post("https://ecommerce.routemisr.com/api/v1/auth/signin",UserLoign)
+// }
+
+
+
+
+
+
 
 }
