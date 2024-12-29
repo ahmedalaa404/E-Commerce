@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RegisterData } from '../interfaces/register-data';
+import { UserLoign } from '../interfaces/user-loign';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,5 +19,17 @@ SignUp(UserRegister: RegisterData):Observable<any>
   return this._httpClient.post("https://ecommerce.routemisr.com/api/v1/auth/signup",UserRegister)
 }
 
+
+
+
+
+
+
+
+SignIn(UserLoign: UserLoign):Observable<any>
+{
+
+  return this._httpClient.post("https://ecommerce.routemisr.com/api/v1/auth/signin",UserLoign)
+}
 
 }
