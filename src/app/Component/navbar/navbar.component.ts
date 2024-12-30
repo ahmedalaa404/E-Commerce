@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component ,OnInit } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthenticationService } from '../../Services/authentication.service';
 
 
@@ -14,7 +14,9 @@ import { AuthenticationService } from '../../Services/authentication.service';
 export class NavbarComponent implements OnInit {
 
 ShowLinks:Boolean=false;
-constructor(private _authService:AuthenticationService) {
+
+
+constructor(private _authService:AuthenticationService ,private _Router:Router) {
   
 }
 
@@ -27,6 +29,15 @@ this.ShowLinks=data;
 })
 }
 
+
+
+
+logout()
+{
+  localStorage.removeItem('token'); // to remove token from local Storage 
+  this._Router.navigate(['/login']); // Navigate to login page
+  this._authService.IsLogin.next(false); // set IsLogin to false
+}
 
 
 }

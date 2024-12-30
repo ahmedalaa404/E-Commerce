@@ -28,7 +28,7 @@
   <li><a routerLink="products" routerLinkActive="bg-main">Products</a></li>
   <li><a routerLink="brands" routerLinkActive="bg-main">Brand</a></li>
   <li><a routerLink="categories" routerLinkActive="bg-main">Categories</a></li>
-  <li><a routerLink="logout" routerLinkActive="bg-main">Logout</a></li>
+  <li><a routerLink="logout" routerLinkActive="bg-main" (click)="logout()">Logout</a></li>
 
 }
 
@@ -61,7 +61,7 @@
 
         @if(ShowLinks)
         {
-        <li><a routerLink="logout" routerLinkActive="bg-main">Logout</a></li>}
+        <li><a routerLink="logout" routerLinkActive="bg-main"  (click)="logout()">Logout</a></li>}
 
         @else {
           
